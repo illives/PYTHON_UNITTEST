@@ -29,6 +29,20 @@ class TestCalculadora(unittest.TestCase):
         with self.assertRaises(AssertionError):
             Calculadora.soma(30, '13')
 
+    def test_subtrair_x_menos_y_retorna_0(self):
+        self.assertEqual(Calculadora.subtrair(10, 10), 0)
+
+    def test_subtrair_x_menos_y_retorna_menos_5(self):
+        self.assertEqual(Calculadora.subtrair(-5, 0), -5)
+
+    def test_subrair_x_nao_e_int_ou_float_deve_retornar_assertionerror(self):
+        with self.assertRaises(AssertionError):
+            Calculadora.subtrair('11', 30)
+
+    def test_subtrair_y_nao_e_int_ou_float_deve_retornar_assertionerror(self):
+        with self.assertRaises(AssertionError):
+            Calculadora.subtrair(30, '13')
+
 
 unittest.main(verbosity=2)
 
