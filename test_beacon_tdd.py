@@ -52,5 +52,6 @@ class TestBeacon_tdd(unittest.TestCase):
         for entrada in entradas:
             with self.subTest(entrada = entrada, saida=saida):
                 self.assertEqual(beacon_tdd(entrada), saida, msg=f'{entrada} não retornou saida {saida}')
+    
 
 unittest.main(verbosity=2)
