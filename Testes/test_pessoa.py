@@ -47,6 +47,7 @@ class TestPessoa(unittest.TestCase):
             fake_request.return_value.ok = False
             self.assertEqual(self.p1.obter_todos_os_dados(), 'ERRO 404')
             self.assertFalse(self.p1.dados_obtidos)
+            
     def test_obter_todos_os_dados_sucesso_e_falha_sequencial(self):
         with patch('requests.get') as fake_request:
             fake_request.return_value.ok = True
