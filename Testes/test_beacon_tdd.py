@@ -1,3 +1,4 @@
+
 """
 TDD <- Test Driven Development
 Ciclo
@@ -12,6 +13,19 @@ Green <- Criar Teste que passe;
 Refactor
 Parte 3 <- Melhorar o Código.
 """
+try:
+    import sys, os
+
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '../Script'
+            )
+        )
+    )
+except:
+    raise
 
 import unittest
 from beacon_tdd import beacon_tdd
@@ -53,5 +67,5 @@ class TestBeacon_tdd(unittest.TestCase):
             with self.subTest(entrada = entrada, saida=saida):
                 self.assertEqual(beacon_tdd(entrada), saida, msg=f'{entrada} não retornou saida {saida}')
     
-
-unittest.main(verbosity=2)
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

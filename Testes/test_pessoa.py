@@ -1,7 +1,19 @@
-from tabnanny import verbose
+try:
+    import sys, os
+
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '../Script'
+            )
+        )
+    )
+except:
+    raise
+
 import unittest
 from unittest.mock import patch
-import requests
 from Pessoal import Pessoa
 
 class TestPessoa(unittest.TestCase):

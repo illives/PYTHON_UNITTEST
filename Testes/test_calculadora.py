@@ -1,3 +1,17 @@
+try:
+    import sys, os
+
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '../Script'
+            )
+        )
+    )
+except:
+    raise
+
 import unittest
 from calculadora import Calculadora
 
@@ -43,6 +57,6 @@ class TestCalculadora(unittest.TestCase):
         with self.assertRaises(AssertionError):
             Calculadora.subtrair(30, '13')
 
-
-unittest.main(verbosity=2)
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
 
